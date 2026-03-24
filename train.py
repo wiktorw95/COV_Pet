@@ -1,12 +1,10 @@
 import torch
-from tqdm import tqdm
 
 def train_model(model, train_loader, criterion, optimizer, device):
     model.train()
     total_loss = 0
     correct = 0
-    pbar = tqdm(train_loader, desc='Training', unit='batch')
-    for images, labels in pbar:
+    for images, labels in train_loader:
         images, labels = images.to(device), labels.to(device)
 
         optimizer.zero_grad()
@@ -16,12 +14,9 @@ def train_model(model, train_loader, criterion, optimizer, device):
         optimizer.step()
         total_loss += loss.item()
 
-        pbar.set_postfix(loss=loss.item())
-
         _, predicted = outputs.max(1)
         correct += predicted.eq(labels).sum().item()
 
-        pbar.set_postfix(loss=loss.item(), acc=100. * correct / ((pbar.n + 1) * train_loader.batch_size))
     return total_loss / len(train_loader), 100. * correct / len(train_loader.dataset)
 
 def validate_model(model, test_loader, device):

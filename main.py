@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
+
 from data_loader import Data_Loader
 from model import PetNet
 from train import train_model, validate_model
@@ -23,12 +24,11 @@ for exp in experiments:
     criterion = nn.CrossEntropyLoss()
 
     history = []
-    for epoch in range(1, 6):
+    for epoch in range(1, 11):
         loss, acc = train_model(model, train_loader, criterion, optimizer, device)
         test_acc = validate_model(model, test_loader, device)
         history.append(test_acc)
-        print(f"\n--- Epoch {epoch}: Train Accuracy: {acc:.4f}% -- Test Accuracy: {test_acc:.4f}% ---")
-        print(f"\n--- Loss: {loss:.4f} ---")
+        print(f"\n--- Epoch {epoch}: Train Accuracy: {acc:.4f}% -- Test Accuracy: {test_acc:.4f}% -- Loss: {loss:.4f} ---")
     results[exp['name']] = history
 
 plt.figure(figsize=(10, 6))
