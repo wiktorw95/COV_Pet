@@ -1,0 +1,125 @@
+--- Experiment Basic ---
+
+--- Epoch 1: Train Accuracy: 4.5652% -- Test Accuracy: 6.6231% -- Loss: 3.5449 ---
+
+--- Epoch 2: Train Accuracy: 8.5870% -- Test Accuracy: 8.2856% -- Loss: 3.3541 ---
+
+--- Epoch 3: Train Accuracy: 14.0761% -- Test Accuracy: 10.7931% -- Loss: 3.1294 ---
+
+--- Epoch 4: Train Accuracy: 33.2337% -- Test Accuracy: 12.0469% -- Loss: 2.3990 ---
+
+--- Epoch 5: Train Accuracy: 69.2663% -- Test Accuracy: 11.0112% -- Loss: 1.0691 ---
+
+--- Epoch 6: Train Accuracy: 91.1413% -- Test Accuracy: 10.2753% -- Loss: 0.2977 ---
+
+--- Epoch 7: Train Accuracy: 96.1413% -- Test Accuracy: 9.6757% -- Loss: 0.1344 ---
+
+--- Epoch 8: Train Accuracy: 98.1250% -- Test Accuracy: 10.6296% -- Loss: 0.0714 ---
+
+--- Epoch 9: Train Accuracy: 98.2880% -- Test Accuracy: 9.7847% -- Loss: 0.0631 ---
+
+--- Epoch 10: Train Accuracy: 97.8804% -- Test Accuracy: 8.9125% -- Loss: 0.0699 ---
+
+--- Epoch 11: Train Accuracy: 98.0707% -- Test Accuracy: 9.2941% -- Loss: 0.0592 ---
+
+--- Epoch 12: Train Accuracy: 99.1304% -- Test Accuracy: 10.3298% -- Loss: 0.0389 ---
+
+--- Epoch 13: Train Accuracy: 99.4565% -- Test Accuracy: 9.0488% -- Loss: 0.0186 ---
+
+--- Epoch 14: Train Accuracy: 98.8315% -- Test Accuracy: 9.8664% -- Loss: 0.0386 ---
+
+--- Epoch 15: Train Accuracy: 99.3750% -- Test Accuracy: 9.7302% -- Loss: 0.0210 ---
+
+--- Epoch 16: Train Accuracy: 99.0489% -- Test Accuracy: 9.7574% -- Loss: 0.0318 ---
+
+--- Epoch 17: Train Accuracy: 98.9402% -- Test Accuracy: 10.0300% -- Loss: 0.0394 ---
+
+--- Epoch 18: Train Accuracy: 99.3207% -- Test Accuracy: 9.9482% -- Loss: 0.0195 ---
+
+--- Epoch 19: Train Accuracy: 99.9185% -- Test Accuracy: 9.7847% -- Loss: 0.0034 ---
+
+--- Epoch 20: Train Accuracy: 99.0761% -- Test Accuracy: 10.0572% -- Loss: 0.0377 ---
+
+--- Experiment Regularization ---
+
+--- Epoch 1: Train Accuracy: 5.0000% -- Test Accuracy: 7.1409% -- Loss: 3.8730 ---
+
+--- Epoch 2: Train Accuracy: 7.4728% -- Test Accuracy: 9.6212% -- Loss: 3.4116 ---
+
+--- Epoch 3: Train Accuracy: 11.7120% -- Test Accuracy: 12.0741% -- Loss: 3.2358 ---
+
+--- Epoch 4: Train Accuracy: 15.4620% -- Test Accuracy: 13.0281% -- Loss: 3.0804 ---
+
+--- Epoch 5: Train Accuracy: 18.8587% -- Test Accuracy: 14.6361% -- Loss: 2.9059 ---
+
+--- Epoch 6: Train Accuracy: 22.3098% -- Test Accuracy: 16.7893% -- Loss: 2.7449 ---
+
+--- Epoch 7: Train Accuracy: 26.4130% -- Test Accuracy: 17.0346% -- Loss: 2.5806 ---
+
+--- Epoch 8: Train Accuracy: 30.3804% -- Test Accuracy: 18.1248% -- Loss: 2.4330 ---
+
+--- Epoch 9: Train Accuracy: 33.7500% -- Test Accuracy: 18.8880% -- Loss: 2.2797 ---
+
+--- Epoch 10: Train Accuracy: 39.0761% -- Test Accuracy: 20.2780% -- Loss: 2.0709 ---
+
+--- Epoch 11: Train Accuracy: 43.5326% -- Test Accuracy: 18.5609% -- Loss: 1.9243 ---
+
+--- Epoch 12: Train Accuracy: 48.2609% -- Test Accuracy: 19.9237% -- Loss: 1.7571 ---
+
+--- Epoch 13: Train Accuracy: 53.4783% -- Test Accuracy: 19.1878% -- Loss: 1.5868 ---
+
+--- Epoch 14: Train Accuracy: 56.8750% -- Test Accuracy: 20.0327% -- Loss: 1.4458 ---
+
+--- Epoch 15: Train Accuracy: 60.9783% -- Test Accuracy: 20.6323% -- Loss: 1.3030 ---
+
+--- Epoch 16: Train Accuracy: 65.2717% -- Test Accuracy: 19.0515% -- Loss: 1.1674 ---
+
+--- Epoch 17: Train Accuracy: 66.9022% -- Test Accuracy: 21.2319% -- Loss: 1.0978 ---
+
+--- Epoch 18: Train Accuracy: 71.6304% -- Test Accuracy: 21.3955% -- Loss: 0.9502 ---
+
+--- Epoch 19: Train Accuracy: 73.9674% -- Test Accuracy: 20.9321% -- Loss: 0.8765 ---
+
+--- Epoch 20: Train Accuracy: 75.7337% -- Test Accuracy: 20.4960% -- Loss: 0.8080 ---
+
+--- Experiment Maxed Out ---
+
+--- Epoch 1: Train Accuracy: 6.8750% -- Test Accuracy: 11.2020% -- Loss: 3.5803 ---
+
+--- Epoch 2: Train Accuracy: 12.6902% -- Test Accuracy: 14.7179% -- Loss: 3.2103 ---
+
+--- Epoch 3: Train Accuracy: 16.5489% -- Test Accuracy: 16.5440% -- Loss: 3.0438 ---
+
+--- Epoch 4: Train Accuracy: 20.0815% -- Test Accuracy: 18.8880% -- Loss: 2.8888 ---
+
+--- Epoch 5: Train Accuracy: 23.2337% -- Test Accuracy: 19.5149% -- Loss: 2.7628 ---
+
+--- Epoch 6: Train Accuracy: 27.9620% -- Test Accuracy: 20.9049% -- Loss: 2.6410 ---
+
+--- Epoch 7: Train Accuracy: 28.6413% -- Test Accuracy: 22.1586% -- Loss: 2.5404 ---
+
+--- Epoch 8: Train Accuracy: 31.6304% -- Test Accuracy: 20.5506% -- Loss: 2.4418 ---
+
+--- Epoch 9: Train Accuracy: 32.9620% -- Test Accuracy: 21.8043% -- Loss: 2.3598 ---
+
+--- Epoch 10: Train Accuracy: 35.5978% -- Test Accuracy: 23.2488% -- Loss: 2.2690 ---
+
+--- Epoch 11: Train Accuracy: 38.0707% -- Test Accuracy: 22.9763% -- Loss: 2.2131 ---
+
+--- Epoch 12: Train Accuracy: 39.8913% -- Test Accuracy: 24.1483% -- Loss: 2.0959 ---
+
+--- Epoch 13: Train Accuracy: 42.2011% -- Test Accuracy: 25.0477% -- Loss: 2.0313 ---
+
+--- Epoch 14: Train Accuracy: 43.8315% -- Test Accuracy: 24.7751% -- Loss: 1.9851 ---
+
+--- Epoch 15: Train Accuracy: 46.1141% -- Test Accuracy: 24.7206% -- Loss: 1.8987 ---
+
+--- Epoch 16: Train Accuracy: 47.4457% -- Test Accuracy: 25.5655% -- Loss: 1.8523 ---
+
+--- Epoch 17: Train Accuracy: 49.4022% -- Test Accuracy: 26.1652% -- Loss: 1.7875 ---
+
+--- Epoch 18: Train Accuracy: 52.3913% -- Test Accuracy: 25.6201% -- Loss: 1.7135 ---
+
+--- Epoch 19: Train Accuracy: 52.3913% -- Test Accuracy: 26.0016% -- Loss: 1.6539 ---
+
+--- Epoch 20: Train Accuracy: 54.1576% -- Test Accuracy: 26.8466% -- Loss: 1.6048 ---

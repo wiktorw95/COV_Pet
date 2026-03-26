@@ -19,7 +19,7 @@ def Data_Loader(batch_size=64, use_augmentation=False):
     train_set = torchvision.datasets.OxfordIIITPet(root='./data', split='trainval', download=True, transform=train_transform)
     test_set = torchvision.datasets.OxfordIIITPet(root='./data', split='test', download=True, transform=test_transform)
 
-    train_loadered = DataLoader(train_set, batch_size=batch_size, num_workers=4, shuffle=True)
-    test_loadered = DataLoader(test_set, batch_size=batch_size, num_workers=4, shuffle=False)
+    train_loadered = DataLoader(train_set, batch_size=batch_size, num_workers=2, shuffle=True)
+    test_loadered = DataLoader(test_set, batch_size=batch_size, num_workers=2, shuffle=False)
 
     return train_loadered, test_loadered, train_set.classes

@@ -1,39 +1,37 @@
-# COV_Pet
+# Oxford-IIIT Pet Classification - Custom CNN
 
---- Experiment Basic ---
+Projekt ten implementuje od zera konwolucyjną sieć neuronową (CNN) w PyTorch, której celem jest klasyfikacja 37 ras psów i kotów na podstawie zbioru danych Oxford-IIIT Pet Dataset.
 
---- Epoch 1: Train Accuracy: 3.9946% -- Test Accuracy: 8.5598% -- Loss: 3.6355 ---
+Projekt miał na celu zbadanie wpływu różnych technik regularyzacji i augmentacji danych na proces uczenia głębokiego z użyciem małego zbioru danych i własnej architektury sieci.
 
---- Epoch 2: Train Accuracy: 7.8261% -- Test Accuracy: 12.8261% -- Loss: 3.4189 ---
+## Architektura Modelu (`PetNet`)
 
---- Epoch 3: Train Accuracy: 12.6359% -- Test Accuracy: 23.3696% -- Loss: 3.2298 ---
+Model został zbudowany od podstaw przy użyciu architektury blokowej. Przekształca on wejściowy obraz o wymiarach `3x128x128` w wektor prawdopodobieństw dla 37 klas.
 
---- Epoch 4: Train Accuracy: 23.9674% -- Test Accuracy: 43.7500% -- Loss: 2.7605 ---
+* **Blok 1 & 2:** Podwójne warstwy konwolucyjne (`Conv2d`) oddzielone Normalizacją Wsadu (`BatchNorm2d`) i funkcją aktywacji ReLU, zakończone redukcją wymiaru (`MaxPool2d`).
+* **Blok 3:** Pojedyncza warstwa konwolucyjna z BatchNorm, ReLU i MaxPool.
+* **Klasyfikator:** W pełni połączone warstwy liniowe (`Linear`) redukujące wektor z 512 do 37 klas, zabezpieczone warstwą `Dropout` w celu zapobiegania przeuczeniu.
 
---- Epoch 5: Train Accuracy: 48.7228% -- Test Accuracy: 83.2065% -- Loss: 1.8214 ---
+## Eksperymenty i Wyniki
 
---- Experiment Regularization ---
+Przeprowadzono trzy eksperymenty, trenując sieć przez 20 epok z różnymi hiperparametrami, aby zaobserwować zjawisko overfittingu (przeuczenia) oraz sposoby walki z nim.
 
---- Epoch 1: Train Accuracy: 2.3370% -- Test Accuracy: 3.2880% -- Loss: 3.7700 ---
+| Nazwa | BatchNorm | Dropout | Augmentacja | Max Train Acc | Max Test Acc | Wnioski |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Basic** | ❌ | 0.0 | ❌ | ~99.9% | ~12.0% | Książkowy overfitting. Model zapamiętał zbiór treningowy, całkowicie oblewając na zbiorze testowym. |
+| **Regularization** | ✅ | 0.3 | ❌ | ~75.7% | ~21.3% | Dodanie BatchNorm i Dropout spowolniło przeuczanie, pozwalając modelowi nauczyć się bardziej ogólnych cech. |
+| **Maxed Out** | ✅ | 0.5 | ✅ | ~54.1% | **~26.8%** | **Zwycięzca.** Dzięki augmentacji (obroty, odbicia) model widział zróżnicowane dane. Uczył się najwolniej (tylko 54% na treningu), ale osiągnął najwyższy, wciąż rosnący wynik na teście. |
 
---- Epoch 2: Train Accuracy: 3.9130% -- Test Accuracy: 7.3098% -- Loss: 3.5779 ---
+### Wizualizacja Wyników
+*(W tym miejscu w repozytorium GitHub możesz wstawić wygenerowany przez kod wykres `Comparing Experiments - Test Accuracy`)*
+Na wykresie wyraźnie widać, że linia "Maxed Out" zachowuje zdrowy, rosnący trend po 20 epokach, podczas gdy pozostałe konfiguracje osiągają plateau (zatrzymują się).
 
---- Epoch 3: Train Accuracy: 7.1739% -- Test Accuracy: 9.9457% -- Loss: 3.4346 ---
+## Sugestie na przyszłość (Co poprawić?)
 
---- Epoch 4: Train Accuracy: 12.6359% -- Test Accuracy: 28.4783% -- Loss: 3.2304 ---
+Obecny wynik testowy to ok. 27%. Zadanie "Fine-grained classification" na 37 klasach jest bardzo trudne dla płytkiej sieci trenowanej od zera. Aby osiągnąć wyniki rzędu 80-90%, rekomendowane są następujące kroki:
 
---- Epoch 5: Train Accuracy: 22.6359% -- Test Accuracy: 50.6793% -- Loss: 2.8007 ---
-
---- Experiment Maxed Out ---
-
---- Epoch 1: Train Accuracy: 3.2880% -- Test Accuracy: 4.6739% -- Loss: 3.6994 ---
-
---- Epoch 2: Train Accuracy: 4.6196% -- Test Accuracy: 6.5217% -- Loss: 3.5381 ---
-
---- Epoch 3: Train Accuracy: 6.9293% -- Test Accuracy: 11.3859% -- Loss: 3.4383 ---
-
---- Epoch 4: Train Accuracy: 8.3152% -- Test Accuracy: 16.7935% -- Loss: 3.3575 ---
-
---- Epoch 5: Train Accuracy: 12.3098% -- Test Accuracy: 21.0326% -- Loss: 3.2232 ---
-
-
+1. **Dłuższy trening:** Krzywa uczenia dla "Maxed Out" w 20 epoce wciąż rośnie. Zwiększenie liczby epok do 50-100 prawdopodobnie poprawi dokładność.
+2. **Transfer Learning:** Zastąpienie `PetNet` gotową, głęboką architekturą (np. `ResNet18` lub `EfficientNet`), która została wcześniej wstępnie wytrenowana na ogromnym zbiorze ImageNet. To branżowy standard dla małych zbiorów danych.
+3. **Zwiększenie rozdzielczości obrazu:** Przejście z wymiarów `128x128` na `224x224`. Różnice między rasami zwierząt tkwią w detalach, które "gubią się" przy niskiej rozdzielczości.
+4. **Learning Rate Scheduler:** Zastosowanie mechanizmu, który automatycznie zmniejsza krok uczenia (Learning Rate), gdy model przestaje robić postępy, aby "dostroić" wagi w końcowej fazie treningu.
+5. **Weight Decay (L2 Regularization):** Dodanie kary za duże wagi do optymalizatora (np. `weight_decay=1e-4` w Adam optimizer), co wymusi jeszcze łagodniejszą formę krzywych.
