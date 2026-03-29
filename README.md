@@ -1,37 +1,40 @@
-# Oxford-IIIT Pet Classification - Custom CNN
+# COV Net - Oxford-IIIT Pet Classification
 
-Projekt ten implementuje od zera konwolucyjną sieć neuronową (CNN) w PyTorch, której celem jest klasyfikacja 37 ras psów i kotów na podstawie zbioru danych Oxford-IIIT Pet Dataset.
+This project was created to test the performance of the Convolutional layers and the Residual Network. The purpose of the project is to classify 37 races of Cats and Dogs from the **Oxford-IIIT Pet Dataset**
+We're comparing custom-made Convolutional Network with Fine-tuned professional model called **"ResNet-18"** which lies on skip connections
+## Architecture and Configuration of Models
 
-Projekt miał na celu zbadanie wpływu różnych technik regularyzacji i augmentacji danych na proces uczenia głębokiego z użyciem małego zbioru danych i własnej architektury sieci.
+We approached the topic by preparing 2 different scenarios and 4 differently configured models, thanks to the **Pytorch** library.
+### 1. Custom CNN (`PetNet`)
 
-## Architektura Modelu (`PetNet`)
+We've prepared 3 variants of hyperparameters for this architecture:
 
-Model został zbudowany od podstaw przy użyciu architektury blokowej. Przekształca on wejściowy obraz o wymiarach `3x128x128` w wektor prawdopodobieństw dla 37 klas.
+* **`Base_NoAug`:** Model which doesn't have any augmentation, Batchnorm, dropout or weight_decay configured. Which means **fast training and fast overfitting**.
+* **`Aug_LowDrop`:** Added **basic augmentation** and small **Dropout** (0.3).
+* **`Aug_HighDrop`:** Implemented everything and reduced Dropout.
 
-* **Blok 1 & 2:** Podwójne warstwy konwolucyjne (`Conv2d`) oddzielone Normalizacją Wsadu (`BatchNorm2d`) i funkcją aktywacji ReLU, zakończone redukcją wymiaru (`MaxPool2d`).
-* **Blok 3:** Pojedyncza warstwa konwolucyjna z BatchNorm, ReLU i MaxPool.
-* **Klasyfikator:** W pełni połączone warstwy liniowe (`Linear`) redukujące wektor z 512 do 37 klas, zabezpieczone warstwą `Dropout` w celu zapobiegania przeuczeniu.
+### 2. Transfer Learning (`PetResNet`)
 
-## Eksperymenty i Wyniki
+Professional approach. We've used the **ResNet-18** architecture, which is trained on ImageNet storage (which is 1 million images)
 
-Przeprowadzono trzy eksperymenty, trenując sieć przez 20 epok z różnymi hiperparametrami, aby zaobserwować zjawisko overfittingu (przeuczenia) oraz sposoby walki z nim.
+---
 
-| Nazwa | BatchNorm | Dropout | Augmentacja | Max Train Acc | Max Test Acc | Wnioski |
-| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **Basic** | ❌ | 0.0 | ❌ | ~99.9% | ~12.0% | Książkowy overfitting. Model zapamiętał zbiór treningowy, całkowicie oblewając na zbiorze testowym. |
-| **Regularization** | ✅ | 0.3 | ❌ | ~75.7% | ~21.3% | Dodanie BatchNorm i Dropout spowolniło przeuczanie, pozwalając modelowi nauczyć się bardziej ogólnych cech. |
-| **Maxed Out** | ✅ | 0.5 | ✅ | ~54.1% | **~26.8%** | **Zwycięzca.** Dzięki augmentacji (obroty, odbicia) model widział zróżnicowane dane. Uczył się najwolniej (tylko 54% na treningu), ale osiągnął najwyższy, wciąż rosnący wynik na teście. |
+## Experimental Results
 
-### Wizualizacja Wyników
-*(W tym miejscu w repozytorium GitHub możesz wstawić wygenerowany przez kod wykres `Comparing Experiments - Test Accuracy`)*
-Na wykresie wyraźnie widać, że linia "Maxed Out" zachowuje zdrowy, rosnący trend po 20 epokach, podczas gdy pozostałe konfiguracje osiągają plateau (zatrzymują się).
+The visualization (available in the attached graphs) clearly shows two extremes: massive overfitting in the simple network vs. the total dominance of Transfer Learning.
 
-## Sugestie na przyszłość (Co poprawić?)
+| Model                   | Epochs (to Early Stop) | Max Train Acc | **Max Test Acc** |
+|:------------------------|:-----------:| :---: | :---: |
+| `Base_NoAug`            | 10 | 100.00% | **12.6%** |
+| `Aug_LowDrop`           | 34 | 4.76% | **4.9%** |
+| `Aug_HighDrop`          | 8 | 2.72% | **2.8%** |
+| **`ResNet18_Transfer`** | **43** | **100.00%** | **88.3%** |
 
-Obecny wynik testowy to ok. 27%. Zadanie "Fine-grained classification" na 37 klasach jest bardzo trudne dla płytkiej sieci trenowanej od zera. Aby osiągnąć wyniki rzędu 80-90%, rekomendowane są następujące kroki:
+### Summary and Conclusions
 
-1. **Dłuższy trening:** Krzywa uczenia dla "Maxed Out" w 20 epoce wciąż rośnie. Zwiększenie liczby epok do 50-100 prawdopodobnie poprawi dokładność.
-2. **Transfer Learning:** Zastąpienie `PetNet` gotową, głęboką architekturą (np. `ResNet18` lub `EfficientNet`), która została wcześniej wstępnie wytrenowana na ogromnym zbiorze ImageNet. To branżowy standard dla małych zbiorów danych.
-3. **Zwiększenie rozdzielczości obrazu:** Przejście z wymiarów `128x128` na `224x224`. Różnice między rasami zwierząt tkwią w detalach, które "gubią się" przy niskiej rozdzielczości.
-4. **Learning Rate Scheduler:** Zastosowanie mechanizmu, który automatycznie zmniejsza krok uczenia (Learning Rate), gdy model przestaje robić postępy, aby "dostroić" wagi w końcowej fazie treningu.
-5. **Weight Decay (L2 Regularization):** Dodanie kary za duże wagi do optymalizatora (np. `weight_decay=1e-4` w Adam optimizer), co wymusi jeszcze łagodniejszą formę krzywych.
+1. **Model Capacity Limits:** The custom 3-block `PetNet` hit a "ceiling" during fine-grained classification. The "from scratch" models (`Aug_LowDrop`, `Aug_HighDrop`) with high-resolution images (224x224) and heavy distortions experienced architectural collapse, resulting in accuracy near random chance (~2.7% for 37 classes). 
+
+    Conversely, the `Base_NoAug` model perfectly (100%) memorized the training set while failing to generalize.
+2. **The Power of Transfer Learning:** Replacing the shallow network with ResNet-18 resulted a huge increase in effectiveness. By "knowing" how to recognize textures and basic shapes from ImageNet, ResNet crossed the 80% threshold in just a few epochs, peaking at an impressive **88.3%**.
+
+This project proves that for complex Computer Vision problems and small datasets, **Transfer Learning is an absolutely essential and highly effective engineering tool**.

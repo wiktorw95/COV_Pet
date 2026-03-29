@@ -1,125 +1,120 @@
---- Experiment Basic ---
+Rozpoczynam sprzętowe zmagania na: cuda
 
---- Epoch 1: Train Accuracy: 4.5652% -- Test Accuracy: 6.6231% -- Loss: 3.5449 ---
+========================================
+🚀 START EKSPERYMENTU: Base_NoAug
+Parametry: BatchNorm=False, Dropout=0, Augmentacja=False, LR=0.0005
+========================================
+Epoka 01 | LR: 0.000500 | Train Acc: 5.52% | Test Acc: 7.63% | Najlepszy: 7.63% ⭐ NOWY NAJLEPSZY!
+Epoka 02 | LR: 0.000500 | Train Acc: 9.48% | Test Acc: 9.76% | Najlepszy: 9.76% ⭐ NOWY NAJLEPSZY!
+Epoka 03 | LR: 0.000500 | Train Acc: 23.04% | Test Acc: 12.65% | Najlepszy: 12.65% ⭐ NOWY NAJLEPSZY!
+Epoka 04 | LR: 0.000500 | Train Acc: 67.26% | Test Acc: 10.38% | Najlepszy: 12.65%
+Epoka 05 | LR: 0.000500 | Train Acc: 96.90% | Test Acc: 10.98% | Najlepszy: 12.65%
+Epoka 06 | LR: 0.000250 | Train Acc: 99.62% | Test Acc: 11.01% | Najlepszy: 12.65%
+Epoka 07 | LR: 0.000250 | Train Acc: 99.92% | Test Acc: 11.69% | Najlepszy: 12.65%
+Epoka 08 | LR: 0.000250 | Train Acc: 100.00% | Test Acc: 11.64% | Najlepszy: 12.65%
+Epoka 09 | LR: 0.000125 | Train Acc: 100.00% | Test Acc: 11.58% | Najlepszy: 12.65%
+Epoka 10 | LR: 0.000125 | Train Acc: 100.00% | Test Acc: 11.53% | Najlepszy: 12.65%
+🛑 Early stopping triggered! Brak poprawy od 7 epok. Zatrzymuję trening.
 
---- Epoch 2: Train Accuracy: 8.5870% -- Test Accuracy: 8.2856% -- Loss: 3.3541 ---
+========================================
+🚀 START EKSPERYMENTU: Aug_LowDrop
+Parametry: BatchNorm=True, Dropout=0.3, Augmentacja=False, LR=0.0005
+========================================
+Epoka 01 | LR: 0.000500 | Train Acc: 2.72% | Test Acc: 2.75% | Najlepszy: 2.75% ⭐ NOWY NAJLEPSZY!
+Epoka 02 | LR: 0.000500 | Train Acc: 2.42% | Test Acc: 2.70% | Najlepszy: 2.75%
+Epoka 03 | LR: 0.000500 | Train Acc: 2.47% | Test Acc: 2.70% | Najlepszy: 2.75%
+Epoka 04 | LR: 0.000250 | Train Acc: 2.72% | Test Acc: 2.70% | Najlepszy: 2.75%
+Epoka 05 | LR: 0.000250 | Train Acc: 2.74% | Test Acc: 2.70% | Najlepszy: 2.75%
+Epoka 06 | LR: 0.000250 | Train Acc: 2.83% | Test Acc: 2.70% | Najlepszy: 2.75%
+Epoka 07 | LR: 0.000125 | Train Acc: 2.77% | Test Acc: 2.70% | Najlepszy: 2.75%
+Epoka 08 | LR: 0.000125 | Train Acc: 2.91% | Test Acc: 3.08% | Najlepszy: 3.08% ⭐ NOWY NAJLEPSZY!
+Epoka 09 | LR: 0.000125 | Train Acc: 3.15% | Test Acc: 3.27% | Najlepszy: 3.27% ⭐ NOWY NAJLEPSZY!
+Epoka 10 | LR: 0.000125 | Train Acc: 3.18% | Test Acc: 3.24% | Najlepszy: 3.27%
+Epoka 11 | LR: 0.000125 | Train Acc: 3.40% | Test Acc: 3.38% | Najlepszy: 3.38% ⭐ NOWY NAJLEPSZY!
+Epoka 12 | LR: 0.000125 | Train Acc: 3.10% | Test Acc: 3.54% | Najlepszy: 3.54% ⭐ NOWY NAJLEPSZY!
+Epoka 13 | LR: 0.000125 | Train Acc: 3.23% | Test Acc: 3.43% | Najlepszy: 3.54%
+Epoka 14 | LR: 0.000125 | Train Acc: 3.53% | Test Acc: 3.84% | Najlepszy: 3.84% ⭐ NOWY NAJLEPSZY!
+Epoka 15 | LR: 0.000125 | Train Acc: 3.10% | Test Acc: 3.84% | Najlepszy: 3.84%
+Epoka 16 | LR: 0.000125 | Train Acc: 4.08% | Test Acc: 4.20% | Najlepszy: 4.20% ⭐ NOWY NAJLEPSZY!
+Epoka 17 | LR: 0.000125 | Train Acc: 4.18% | Test Acc: 4.25% | Najlepszy: 4.25% ⭐ NOWY NAJLEPSZY!
+Epoka 18 | LR: 0.000125 | Train Acc: 4.16% | Test Acc: 4.33% | Najlepszy: 4.33% ⭐ NOWY NAJLEPSZY!
+Epoka 19 | LR: 0.000125 | Train Acc: 4.16% | Test Acc: 4.44% | Najlepszy: 4.44% ⭐ NOWY NAJLEPSZY!
+Epoka 20 | LR: 0.000125 | Train Acc: 4.16% | Test Acc: 4.28% | Najlepszy: 4.44%
+Epoka 21 | LR: 0.000125 | Train Acc: 4.32% | Test Acc: 4.85% | Najlepszy: 4.85% ⭐ NOWY NAJLEPSZY!
+Epoka 22 | LR: 0.000125 | Train Acc: 4.48% | Test Acc: 4.63% | Najlepszy: 4.85%
+Epoka 23 | LR: 0.000125 | Train Acc: 4.32% | Test Acc: 4.47% | Najlepszy: 4.85%
+Epoka 24 | LR: 0.000063 | Train Acc: 4.27% | Test Acc: 4.69% | Najlepszy: 4.85%
+Epoka 25 | LR: 0.000063 | Train Acc: 4.32% | Test Acc: 4.77% | Najlepszy: 4.85%
+Epoka 26 | LR: 0.000063 | Train Acc: 3.97% | Test Acc: 4.85% | Najlepszy: 4.85%
+Epoka 27 | LR: 0.000063 | Train Acc: 4.84% | Test Acc: 4.91% | Najlepszy: 4.91% ⭐ NOWY NAJLEPSZY!
+Epoka 28 | LR: 0.000063 | Train Acc: 4.21% | Test Acc: 4.63% | Najlepszy: 4.91%
+Epoka 29 | LR: 0.000063 | Train Acc: 4.10% | Test Acc: 4.72% | Najlepszy: 4.91%
+Epoka 30 | LR: 0.000031 | Train Acc: 4.54% | Test Acc: 4.85% | Najlepszy: 4.91%
+Epoka 31 | LR: 0.000031 | Train Acc: 4.76% | Test Acc: 4.61% | Najlepszy: 4.91%
+Epoka 32 | LR: 0.000031 | Train Acc: 4.43% | Test Acc: 4.63% | Najlepszy: 4.91%
+Epoka 33 | LR: 0.000016 | Train Acc: 4.35% | Test Acc: 4.91% | Najlepszy: 4.91%
+Epoka 34 | LR: 0.000016 | Train Acc: 4.46% | Test Acc: 4.66% | Najlepszy: 4.91%
+🛑 Early stopping triggered! Brak poprawy od 7 epok. Zatrzymuję trening.
 
---- Epoch 3: Train Accuracy: 14.0761% -- Test Accuracy: 10.7931% -- Loss: 3.1294 ---
+========================================
+🚀 START EKSPERYMENTU: Aug_HighDrop
+Parametry: BatchNorm=True, Dropout=0.2, Augmentacja=True, LR=0.001
+========================================
+Epoka 01 | LR: 0.001000 | Train Acc: 2.69% | Test Acc: 2.81% | Najlepszy: 2.81% ⭐ NOWY NAJLEPSZY!
+Epoka 02 | LR: 0.001000 | Train Acc: 2.77% | Test Acc: 2.81% | Najlepszy: 2.81%
+Epoka 03 | LR: 0.001000 | Train Acc: 2.36% | Test Acc: 2.73% | Najlepszy: 2.81%
+Epoka 04 | LR: 0.000500 | Train Acc: 2.26% | Test Acc: 2.73% | Najlepszy: 2.81%
+Epoka 05 | LR: 0.000500 | Train Acc: 2.72% | Test Acc: 2.73% | Najlepszy: 2.81%
+Epoka 06 | LR: 0.000500 | Train Acc: 2.72% | Test Acc: 2.73% | Najlepszy: 2.81%
+Epoka 07 | LR: 0.000250 | Train Acc: 2.42% | Test Acc: 2.73% | Najlepszy: 2.81%
+Epoka 08 | LR: 0.000250 | Train Acc: 2.72% | Test Acc: 2.73% | Najlepszy: 2.81%
+🛑 Early stopping triggered! Brak poprawy od 7 epok. Zatrzymuję trening.
 
---- Epoch 4: Train Accuracy: 33.2337% -- Test Accuracy: 12.0469% -- Loss: 2.3990 ---
-
---- Epoch 5: Train Accuracy: 69.2663% -- Test Accuracy: 11.0112% -- Loss: 1.0691 ---
-
---- Epoch 6: Train Accuracy: 91.1413% -- Test Accuracy: 10.2753% -- Loss: 0.2977 ---
-
---- Epoch 7: Train Accuracy: 96.1413% -- Test Accuracy: 9.6757% -- Loss: 0.1344 ---
-
---- Epoch 8: Train Accuracy: 98.1250% -- Test Accuracy: 10.6296% -- Loss: 0.0714 ---
-
---- Epoch 9: Train Accuracy: 98.2880% -- Test Accuracy: 9.7847% -- Loss: 0.0631 ---
-
---- Epoch 10: Train Accuracy: 97.8804% -- Test Accuracy: 8.9125% -- Loss: 0.0699 ---
-
---- Epoch 11: Train Accuracy: 98.0707% -- Test Accuracy: 9.2941% -- Loss: 0.0592 ---
-
---- Epoch 12: Train Accuracy: 99.1304% -- Test Accuracy: 10.3298% -- Loss: 0.0389 ---
-
---- Epoch 13: Train Accuracy: 99.4565% -- Test Accuracy: 9.0488% -- Loss: 0.0186 ---
-
---- Epoch 14: Train Accuracy: 98.8315% -- Test Accuracy: 9.8664% -- Loss: 0.0386 ---
-
---- Epoch 15: Train Accuracy: 99.3750% -- Test Accuracy: 9.7302% -- Loss: 0.0210 ---
-
---- Epoch 16: Train Accuracy: 99.0489% -- Test Accuracy: 9.7574% -- Loss: 0.0318 ---
-
---- Epoch 17: Train Accuracy: 98.9402% -- Test Accuracy: 10.0300% -- Loss: 0.0394 ---
-
---- Epoch 18: Train Accuracy: 99.3207% -- Test Accuracy: 9.9482% -- Loss: 0.0195 ---
-
---- Epoch 19: Train Accuracy: 99.9185% -- Test Accuracy: 9.7847% -- Loss: 0.0034 ---
-
---- Epoch 20: Train Accuracy: 99.0761% -- Test Accuracy: 10.0572% -- Loss: 0.0377 ---
-
---- Experiment Regularization ---
-
---- Epoch 1: Train Accuracy: 5.0000% -- Test Accuracy: 7.1409% -- Loss: 3.8730 ---
-
---- Epoch 2: Train Accuracy: 7.4728% -- Test Accuracy: 9.6212% -- Loss: 3.4116 ---
-
---- Epoch 3: Train Accuracy: 11.7120% -- Test Accuracy: 12.0741% -- Loss: 3.2358 ---
-
---- Epoch 4: Train Accuracy: 15.4620% -- Test Accuracy: 13.0281% -- Loss: 3.0804 ---
-
---- Epoch 5: Train Accuracy: 18.8587% -- Test Accuracy: 14.6361% -- Loss: 2.9059 ---
-
---- Epoch 6: Train Accuracy: 22.3098% -- Test Accuracy: 16.7893% -- Loss: 2.7449 ---
-
---- Epoch 7: Train Accuracy: 26.4130% -- Test Accuracy: 17.0346% -- Loss: 2.5806 ---
-
---- Epoch 8: Train Accuracy: 30.3804% -- Test Accuracy: 18.1248% -- Loss: 2.4330 ---
-
---- Epoch 9: Train Accuracy: 33.7500% -- Test Accuracy: 18.8880% -- Loss: 2.2797 ---
-
---- Epoch 10: Train Accuracy: 39.0761% -- Test Accuracy: 20.2780% -- Loss: 2.0709 ---
-
---- Epoch 11: Train Accuracy: 43.5326% -- Test Accuracy: 18.5609% -- Loss: 1.9243 ---
-
---- Epoch 12: Train Accuracy: 48.2609% -- Test Accuracy: 19.9237% -- Loss: 1.7571 ---
-
---- Epoch 13: Train Accuracy: 53.4783% -- Test Accuracy: 19.1878% -- Loss: 1.5868 ---
-
---- Epoch 14: Train Accuracy: 56.8750% -- Test Accuracy: 20.0327% -- Loss: 1.4458 ---
-
---- Epoch 15: Train Accuracy: 60.9783% -- Test Accuracy: 20.6323% -- Loss: 1.3030 ---
-
---- Epoch 16: Train Accuracy: 65.2717% -- Test Accuracy: 19.0515% -- Loss: 1.1674 ---
-
---- Epoch 17: Train Accuracy: 66.9022% -- Test Accuracy: 21.2319% -- Loss: 1.0978 ---
-
---- Epoch 18: Train Accuracy: 71.6304% -- Test Accuracy: 21.3955% -- Loss: 0.9502 ---
-
---- Epoch 19: Train Accuracy: 73.9674% -- Test Accuracy: 20.9321% -- Loss: 0.8765 ---
-
---- Epoch 20: Train Accuracy: 75.7337% -- Test Accuracy: 20.4960% -- Loss: 0.8080 ---
-
---- Experiment Maxed Out ---
-
---- Epoch 1: Train Accuracy: 6.8750% -- Test Accuracy: 11.2020% -- Loss: 3.5803 ---
-
---- Epoch 2: Train Accuracy: 12.6902% -- Test Accuracy: 14.7179% -- Loss: 3.2103 ---
-
---- Epoch 3: Train Accuracy: 16.5489% -- Test Accuracy: 16.5440% -- Loss: 3.0438 ---
-
---- Epoch 4: Train Accuracy: 20.0815% -- Test Accuracy: 18.8880% -- Loss: 2.8888 ---
-
---- Epoch 5: Train Accuracy: 23.2337% -- Test Accuracy: 19.5149% -- Loss: 2.7628 ---
-
---- Epoch 6: Train Accuracy: 27.9620% -- Test Accuracy: 20.9049% -- Loss: 2.6410 ---
-
---- Epoch 7: Train Accuracy: 28.6413% -- Test Accuracy: 22.1586% -- Loss: 2.5404 ---
-
---- Epoch 8: Train Accuracy: 31.6304% -- Test Accuracy: 20.5506% -- Loss: 2.4418 ---
-
---- Epoch 9: Train Accuracy: 32.9620% -- Test Accuracy: 21.8043% -- Loss: 2.3598 ---
-
---- Epoch 10: Train Accuracy: 35.5978% -- Test Accuracy: 23.2488% -- Loss: 2.2690 ---
-
---- Epoch 11: Train Accuracy: 38.0707% -- Test Accuracy: 22.9763% -- Loss: 2.2131 ---
-
---- Epoch 12: Train Accuracy: 39.8913% -- Test Accuracy: 24.1483% -- Loss: 2.0959 ---
-
---- Epoch 13: Train Accuracy: 42.2011% -- Test Accuracy: 25.0477% -- Loss: 2.0313 ---
-
---- Epoch 14: Train Accuracy: 43.8315% -- Test Accuracy: 24.7751% -- Loss: 1.9851 ---
-
---- Epoch 15: Train Accuracy: 46.1141% -- Test Accuracy: 24.7206% -- Loss: 1.8987 ---
-
---- Epoch 16: Train Accuracy: 47.4457% -- Test Accuracy: 25.5655% -- Loss: 1.8523 ---
-
---- Epoch 17: Train Accuracy: 49.4022% -- Test Accuracy: 26.1652% -- Loss: 1.7875 ---
-
---- Epoch 18: Train Accuracy: 52.3913% -- Test Accuracy: 25.6201% -- Loss: 1.7135 ---
-
---- Epoch 19: Train Accuracy: 52.3913% -- Test Accuracy: 26.0016% -- Loss: 1.6539 ---
-
---- Epoch 20: Train Accuracy: 54.1576% -- Test Accuracy: 26.8466% -- Loss: 1.6048 ---
+========================================
+🚀 START EKSPERYMENTU: ResNet18_Transfer
+Parametry: BatchNorm=True, Dropout=0.3, Augmentacja=True, LR=0.0003
+========================================
+Epoka 01 | LR: 0.000300 | Train Acc: 66.60% | Test Acc: 76.67% | Najlepszy: 76.67% ⭐ NOWY NAJLEPSZY!
+Epoka 02 | LR: 0.000300 | Train Acc: 87.64% | Test Acc: 75.09% | Najlepszy: 76.67%
+Epoka 03 | LR: 0.000300 | Train Acc: 90.35% | Test Acc: 74.87% | Najlepszy: 76.67%
+Epoka 04 | LR: 0.000300 | Train Acc: 94.05% | Test Acc: 81.11% | Najlepszy: 81.11% ⭐ NOWY NAJLEPSZY!
+Epoka 05 | LR: 0.000300 | Train Acc: 95.16% | Test Acc: 77.24% | Najlepszy: 81.11%
+Epoka 06 | LR: 0.000300 | Train Acc: 96.14% | Test Acc: 75.22% | Najlepszy: 81.11%
+Epoka 07 | LR: 0.000150 | Train Acc: 96.60% | Test Acc: 77.71% | Najlepszy: 81.11%
+Epoka 08 | LR: 0.000150 | Train Acc: 98.26% | Test Acc: 84.93% | Najlepszy: 84.93% ⭐ NOWY NAJLEPSZY!
+Epoka 09 | LR: 0.000150 | Train Acc: 99.40% | Test Acc: 85.80% | Najlepszy: 85.80% ⭐ NOWY NAJLEPSZY!
+Epoka 10 | LR: 0.000150 | Train Acc: 99.84% | Test Acc: 86.13% | Najlepszy: 86.13% ⭐ NOWY NAJLEPSZY!
+Epoka 11 | LR: 0.000150 | Train Acc: 99.81% | Test Acc: 86.48% | Najlepszy: 86.48% ⭐ NOWY NAJLEPSZY!
+Epoka 12 | LR: 0.000150 | Train Acc: 99.70% | Test Acc: 84.85% | Najlepszy: 86.48%
+Epoka 13 | LR: 0.000150 | Train Acc: 99.43% | Test Acc: 86.24% | Najlepszy: 86.48%
+Epoka 14 | LR: 0.000150 | Train Acc: 99.89% | Test Acc: 87.14% | Najlepszy: 87.14% ⭐ NOWY NAJLEPSZY!
+Epoka 15 | LR: 0.000150 | Train Acc: 99.81% | Test Acc: 85.55% | Najlepszy: 87.14%
+Epoka 16 | LR: 0.000150 | Train Acc: 99.81% | Test Acc: 85.69% | Najlepszy: 87.14%
+Epoka 17 | LR: 0.000075 | Train Acc: 99.38% | Test Acc: 83.27% | Najlepszy: 87.14%
+Epoka 18 | LR: 0.000075 | Train Acc: 99.84% | Test Acc: 87.19% | Najlepszy: 87.19% ⭐ NOWY NAJLEPSZY!
+Epoka 19 | LR: 0.000075 | Train Acc: 99.95% | Test Acc: 86.86% | Najlepszy: 87.19%
+Epoka 20 | LR: 0.000075 | Train Acc: 99.89% | Test Acc: 87.41% | Najlepszy: 87.41% ⭐ NOWY NAJLEPSZY!
+Epoka 21 | LR: 0.000075 | Train Acc: 99.97% | Test Acc: 86.18% | Najlepszy: 87.41%
+Epoka 22 | LR: 0.000075 | Train Acc: 99.92% | Test Acc: 86.07% | Najlepszy: 87.41%
+Epoka 23 | LR: 0.000037 | Train Acc: 100.00% | Test Acc: 86.78% | Najlepszy: 87.41%
+Epoka 24 | LR: 0.000037 | Train Acc: 100.00% | Test Acc: 87.38% | Najlepszy: 87.41%
+Epoka 25 | LR: 0.000037 | Train Acc: 99.97% | Test Acc: 87.54% | Najlepszy: 87.54% ⭐ NOWY NAJLEPSZY!
+Epoka 26 | LR: 0.000037 | Train Acc: 99.92% | Test Acc: 87.60% | Najlepszy: 87.60% ⭐ NOWY NAJLEPSZY!
+Epoka 27 | LR: 0.000037 | Train Acc: 100.00% | Test Acc: 88.01% | Najlepszy: 88.01% ⭐ NOWY NAJLEPSZY!
+Epoka 28 | LR: 0.000037 | Train Acc: 100.00% | Test Acc: 87.95% | Najlepszy: 88.01%
+Epoka 29 | LR: 0.000037 | Train Acc: 99.97% | Test Acc: 87.05% | Najlepszy: 88.01%
+Epoka 30 | LR: 0.000019 | Train Acc: 100.00% | Test Acc: 87.98% | Najlepszy: 88.01%
+Epoka 31 | LR: 0.000019 | Train Acc: 100.00% | Test Acc: 88.06% | Najlepszy: 88.06% ⭐ NOWY NAJLEPSZY!
+Epoka 32 | LR: 0.000019 | Train Acc: 100.00% | Test Acc: 87.57% | Najlepszy: 88.06%
+Epoka 33 | LR: 0.000019 | Train Acc: 100.00% | Test Acc: 87.71% | Najlepszy: 88.06%
+Epoka 34 | LR: 0.000019 | Train Acc: 100.00% | Test Acc: 88.14% | Najlepszy: 88.14% ⭐ NOWY NAJLEPSZY!
+Epoka 35 | LR: 0.000019 | Train Acc: 100.00% | Test Acc: 88.06% | Najlepszy: 88.14%
+Epoka 36 | LR: 0.000019 | Train Acc: 100.00% | Test Acc: 88.31% | Najlepszy: 88.31% ⭐ NOWY NAJLEPSZY!
+Epoka 37 | LR: 0.000019 | Train Acc: 100.00% | Test Acc: 88.23% | Najlepszy: 88.31%
+Epoka 38 | LR: 0.000019 | Train Acc: 99.97% | Test Acc: 87.79% | Najlepszy: 88.31%
+Epoka 39 | LR: 0.000009 | Train Acc: 100.00% | Test Acc: 88.20% | Najlepszy: 88.31%
+Epoka 40 | LR: 0.000009 | Train Acc: 100.00% | Test Acc: 88.01% | Najlepszy: 88.31%
+Epoka 41 | LR: 0.000009 | Train Acc: 100.00% | Test Acc: 88.01% | Najlepszy: 88.31%
+Epoka 42 | LR: 0.000005 | Train Acc: 100.00% | Test Acc: 87.82% | Najlepszy: 88.31%
+Epoka 43 | LR: 0.000005 | Train Acc: 100.00% | Test Acc: 88.06% | Najlepszy: 88.31%
+🛑 Early stopping triggered! Brak poprawy od 7 epok. Zatrzymuję trening.
