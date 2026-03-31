@@ -10,13 +10,13 @@ class PetResNet(nn.Module):
 
         num_filters = self.res.fc.in_features
 
-        self.backbone.fc = nn.Sequential(
+        self.res.fc = nn.Sequential(
             nn.Dropout(dropout_p),
             nn.Linear(num_filters, num_classes)
         )
 
     def forward(self, x):
-        return self.backbone(x)
+        return self.res(x)
 
 class PetNet(nn.Module):
     def __init__(self, num_classes=37, use_batchnorm=False, dropout_p=0.0):
